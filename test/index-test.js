@@ -3,7 +3,7 @@ const assert = chai.assert;
 const SpiralMatrix = require('../index.js');
 const math = require('mathjs');
 
-describe('SpiralMatrix with perfect square', function() {
+describe('SpiralMatrix with even perfect square', function() {
   var spiralMatrix = new SpiralMatrix(24);
 
   it('takes in an integer', function() {
@@ -20,5 +20,9 @@ describe('SpiralMatrix with perfect square', function() {
     //math.size() returns array with both dimenstions
     assert.equal(math.size(matrix)[0], 5);
     assert.equal(math.size(matrix)[1], 5);
+  });
+
+  it('fills matrix in spiral format starting at center of square', function() {
+    spiralMatrix.fillMatrix();
   });
 });
