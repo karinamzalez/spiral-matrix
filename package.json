@@ -1,0 +1,23 @@
+{
+  "name": "spiral-matrix",
+  "version": "1.0.0",
+  "description": "spiral-matrix-- coding challenge for crownpeak",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karinamzalez/spiral-matrix.git"
+  },
+  "keywords": [
+    "spiral",
+    "matrix"
+  ],
+  "author": "karinamzalez <karinamzalez@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karinamzalez/spiral-matrix/issues"
+  },
+  "homepage": "https://github.com/karinamzalez/spiral-matrix#readme"
+}
