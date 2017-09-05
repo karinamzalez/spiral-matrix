@@ -3,3 +3,5 @@ class spiralMatrix {
     this.integer = integer;
   }
 }
+
+module.exports = spiralMatrix;
