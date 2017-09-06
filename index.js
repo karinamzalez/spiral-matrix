@@ -34,9 +34,10 @@ class SpiralMatrix {
         } else if (i < math.sqrt(currLayer) && i !== 1){
           currIndex = math.add(currIndex, this.instructions.down);
           matrix = math.subset(matrix, math.index(currIndex[0], currIndex[1]), i);
-        } else if (2 < i < (math.sqrt(currLayer) + 2)) {
-          console.log(i);
-        }
+        } else if ( i >= math.sqrt(currLayer) && i < (math.sqrt(currLayer) + 2)) {
+          currIndex = math.add(currIndex, this.instructions.left);
+          matrix = math.subset(matrix, math.index(currIndex[0], currIndex[1]), i);
+        } 
       }
       console.log(matrix);
     }
