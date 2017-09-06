@@ -2,7 +2,7 @@ const math = require('mathjs');
 
 function isOdd(num) { return (num % 2) === 1; }
 
-class spiralMatrix {
+class SpiralMatrix {
   constructor(integer) {
     this.integer = integer;
     // this.printMatrix = isPerfectSquare() ? fillMatrix(true) : fillMatrix(false);
@@ -10,13 +10,26 @@ class spiralMatrix {
 
   fillMatrix() {
     var matrix = this.generateMatrix();
-    let center, dimensions = math.size(matrix);
+    let curr, center, dimensions = math.size(matrix);
 
     if (isOdd(dimensions[0])) {
       //set center of matrix
-      console.log(math.subtract(dimensions, 1));
-      // var center = math.dotDivide([], [2, 2]);
+      center = math.dotDivide(math.subtract(dimensions, 1), 2);
     }
+
+    var squares = [1];
+
+//generate array of perfect squares up until the perfect square given
+    for (var i=3; i < this.integer/2.5 ; i+=2) {
+      console.log(i);
+      squares.push(squares[squares.length - 1] + i);
+    }
+
+    console.log(squares);
+
+    // for (var i = 0; i < this.integer; i++) {
+    //
+    // }
   }
 
   generateMatrix() {
@@ -34,4 +47,7 @@ class spiralMatrix {
   }
 }
 
-module.exports = spiralMatrix;
+module.exports = {
+  SpiralMatrix: SpiralMatrix,
+  isOdd: isOdd,
+};
