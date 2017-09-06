@@ -32,6 +32,15 @@ describe('SpiralMatrix with even perfect square', function() {
     assert.equal(math.size(matrix)[1], 5);
   });
 
+  //write test that asserts instantiation with instructions
+
+  it('returns array of odd perfect squares up until given perfect square', function(){
+    spiralMatrix.generateOddSquareArray();
+
+    assert.equal(spiralMatrix.oddSquares[0], 9);
+    assert.equal(spiralMatrix.oddSquares[1], 25);
+  });
+
   it('fills matrix in spiral format starting at center of square', function() {
     spiralMatrix.fillMatrix();
   });

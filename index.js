@@ -5,31 +5,28 @@ function isOdd(num) { return (num % 2) === 1; }
 class SpiralMatrix {
   constructor(integer) {
     this.integer = integer;
+    this.oddSquares = [];
+    this.instructions = {
+      right: [0, 1],
+      left: [0, -1],
+      up: [-1, 0],
+      down: [1, 0]
+    };
     // this.printMatrix = isPerfectSquare() ? fillMatrix(true) : fillMatrix(false);
   }
 
   fillMatrix() {
-    var matrix = this.generateMatrix();
+    let matrix = this.generateMatrix();
     let curr, center, dimensions = math.size(matrix);
 
     if (isOdd(dimensions[0])) {
       //set center of matrix
       center = math.dotDivide(math.subtract(dimensions, 1), 2);
+      matrix = math.subset(matrix, math.index(2, 2), 9);
+
+      console.log(matrix);
     }
-
-    var squares = [1];
-
-//generate array of perfect squares up until the perfect square given
-    for (var i=3; i < this.integer/2.5 ; i+=2) {
-      console.log(i);
-      squares.push(squares[squares.length - 1] + i);
-    }
-
-    console.log(squares);
-
-    // for (var i = 0; i < this.integer; i++) {
-    //
-    // }
+    //generate array of perfect squares up until the perfect square given
   }
 
   generateMatrix() {
@@ -37,6 +34,15 @@ class SpiralMatrix {
     var dimension = math.sqrt(this.integer + 1);
     //set this.dimensions equal to dimenstions
     return math.zeros([dimension, dimension]);
+  }
+
+  generateOddSquareArray() {
+    let squares = [1];
+    for (var i=3; i < this.integer/2.5 ; i+=2) {
+      let square = squares[squares.length - 1] + i;
+      squares.push(square);
+      isOdd(square) && this.oddSquares.push(square);
+    }
   }
 
   isPerfectSquare() {
