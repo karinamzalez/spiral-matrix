@@ -12,18 +12,32 @@ class SpiralMatrix {
       up: [-1, 0],
       down: [1, 0]
     };
-    // this.printMatrix = isPerfectSquare() ? fillMatrix(true) : fillMatrix(false);
+    // this.printMatrix = this.isPerfectSquare() && this.fillMatrix(true);
   }
 
-  fillMatrix() {
+  fillMatrix(boolean) {
+    this.generateOddSquaresArray();
     let matrix = this.generateMatrix();
-    let curr, center, dimensions = math.size(matrix);
+    let currIndex, currLayer, center, dimensions = math.size(matrix);
+    let rotations =  2;
 
+    //fill matrix starting at center if the dimensions are odd
     if (isOdd(dimensions[0])) {
-      //set center of matrix
-      center = math.dotDivide(math.subtract(dimensions, 1), 2);
-      matrix = math.subset(matrix, math.index(2, 2), 9);
+      //set center of matrix as current Index
+      currIndex = math.dotDivide(math.subtract(dimensions, 1), 2);
+      currLayer = this.oddSquares[0];
 
+      for (var i = 0; i < currLayer; i++) {
+        if (i === currLayer || i === 0) {
+          currIndex = math.add(currIndex, this.instructions.right);
+          matrix = math.subset(matrix, math.index(currIndex[0], currIndex[1]), i + 1);
+        } else if (i < math.sqrt(currLayer) && i !== 1){
+          currIndex = math.add(currIndex, this.instructions.down);
+          matrix = math.subset(matrix, math.index(currIndex[0], currIndex[1]), i);
+        } else if (2 < i < (math.sqrt(currLayer) + 2)) {
+          console.log(i);
+        }
+      }
       console.log(matrix);
     }
     //generate array of perfect squares up until the perfect square given
@@ -36,7 +50,7 @@ class SpiralMatrix {
     return math.zeros([dimension, dimension]);
   }
 
-  generateOddSquareArray() {
+  generateOddSquaresArray() {
     let squares = [1];
     for (var i=3; i < this.integer/2.5 ; i+=2) {
       let square = squares[squares.length - 1] + i;

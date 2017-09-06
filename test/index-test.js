@@ -3,12 +3,12 @@ const assert = chai.assert;
 const {SpiralMatrix, isOdd} = require('../index.js');
 const math = require('mathjs');
 
-describe('isOdd', function(){
-  it('should return true if input is an odd number', function(){
+describe('isOdd', function() {
+  it('should return true if input is an odd number', function() {
     assert.equal(isOdd(3), true);
   });
 
-  it('should return false if number is even', function(){
+  it('should return false if number is even', function() {
     assert.equal(isOdd(4), false);
   });
 });
@@ -32,13 +32,24 @@ describe('SpiralMatrix with even perfect square', function() {
     assert.equal(math.size(matrix)[1], 5);
   });
 
-  //write test that asserts instantiation with instructions
+  it('generates object of instructions upon instantiation', function() {
 
-  it('returns array of odd perfect squares up until given perfect square', function(){
-    spiralMatrix.generateOddSquareArray();
+    assert.equal(spiralMatrix.instructions.right[0], 0);
+    assert.equal(spiralMatrix.instructions.right[1], 1);
+    assert.equal(spiralMatrix.instructions.left[0], 0);
+    assert.equal(spiralMatrix.instructions.left[1], -1);
+    assert.equal(spiralMatrix.instructions.up[0], -1);
+    assert.equal(spiralMatrix.instructions.up[1], 0);
+    assert.equal(spiralMatrix.instructions.down[0], 1);
+    assert.equal(spiralMatrix.instructions.down[1], 0);
+  });
 
-    assert.equal(spiralMatrix.oddSquares[0], 9);
-    assert.equal(spiralMatrix.oddSquares[1], 25);
+  it('returns array of odd perfect squares up until given perfect square', function() {
+    var matrix = new SpiralMatrix(24);
+    matrix.generateOddSquaresArray();
+
+    assert.equal(matrix.oddSquares[0], 9);
+    assert.equal(matrix.oddSquares[1], 25);
   });
 
   it('fills matrix in spiral format starting at center of square', function() {
