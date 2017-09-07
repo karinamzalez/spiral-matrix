@@ -5,16 +5,6 @@ const assert = chai.assert;
 const math = require('mathjs');
 const SpiralMatrix = require('../lib/spiral-matrix.js');
 
-describe('isOdd', function() {
-  xit('should return true if input is an odd number', function() {
-    assert.equal(isOdd(3), true);
-  });
-
-  xit('should return false if number is even', function() {
-    assert.equal(isOdd(4), false);
-  });
-});
-
 describe('SpiralMatrix with even perfect square', function() {
   var spiralMatrix = new SpiralMatrix(24);
 
