@@ -12,14 +12,6 @@ describe('SpiralMatrix with even perfect square', function() {
     assert.equal(spiralMatrix.integer, 24);
   });
 
-  it('generates Matrix with perfect square dimensions', function() {
-    var matrix = spiralMatrix.generateMatrix();
-
-    //math.size() returns array with both dimenstions
-    assert.equal(math.size(matrix)[0], 5);
-    assert.equal(math.size(matrix)[1], 5);
-  });
-
   it('fills matrix in spiral format starting at center of square', function() {
     spiralMatrix.fillMatrix();
   });

@@ -3,7 +3,8 @@ const chai = require('chai');
 const assert = chai.assert;
 const math = require('mathjs');
 const { isOdd, isPerfectSquare,
-        generateMatrixCenter, generateOddSquaresArray } = require('../lib/math-functions.js');
+        generateMatrixCenter, generateOddSquaresArray,
+        generateMatrix } = require('../lib/math-functions.js');
 
 describe('isOdd', function() {
   it('should return true if input is an odd number', function() {
@@ -38,5 +39,14 @@ describe('generateOddSquaresArray', function() {
 
     assert.equal(oddSquares[0], 9);
     assert.equal(oddSquares[1], 25);
+  });
+});
+
+describe('generateMatrix', function() {
+  it('should generate matrix with perfect square dimensions', function() {
+    let matrix = generateMatrix(24);
+
+    assert.equal(math.size(matrix)[0], 5);
+    assert.equal(math.size(matrix)[1], 5);
   });
 });
