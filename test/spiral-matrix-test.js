@@ -12,10 +12,6 @@ describe('SpiralMatrix with even perfect square', function() {
     assert.equal(spiralMatrix.integer, 24);
   });
 
-  it('checks if given integer + 1 is perfect square', function() {
-    assert.equal(spiralMatrix.isPerfectSquare(), true);
-  });
-
   it('generates Matrix with perfect square dimensions', function() {
     var matrix = spiralMatrix.generateMatrix();
 
