@@ -20,14 +20,6 @@ describe('SpiralMatrix with even perfect square', function() {
     assert.equal(math.size(matrix)[1], 5);
   });
 
-  it('returns array of odd perfect squares up until given perfect square', function() {
-    var matrix = new SpiralMatrix(24);
-    matrix.generateOddSquaresArray();
-
-    assert.equal(matrix.oddSquares[0], 9);
-    assert.equal(matrix.oddSquares[1], 25);
-  });
-
   it('fills matrix in spiral format starting at center of square', function() {
     spiralMatrix.fillMatrix();
   });

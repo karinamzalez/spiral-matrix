@@ -3,7 +3,7 @@ const chai = require('chai');
 const assert = chai.assert;
 const math = require('mathjs');
 const { isOdd, isPerfectSquare,
-        generateMatrixCenter } = require('../lib/math-functions.js');
+        generateMatrixCenter, generateOddSquaresArray } = require('../lib/math-functions.js');
 
 describe('isOdd', function() {
   it('should return true if input is an odd number', function() {
@@ -29,5 +29,14 @@ describe('generateMatrixCenter', function() {
   it('should generate the index of the center of the matrix given dimensions', function() {
     assert.equal(generateMatrixCenter([5, 5])[0], 2);
     assert.equal(generateMatrixCenter([5, 5])[1], 2);
+  });
+});
+
+describe('generateOddSquaresArray', function() {
+  it('should return array of odd perfect squares up until given perfect square', function() {
+    let oddSquares = generateOddSquaresArray(24);
+
+    assert.equal(oddSquares[0], 9);
+    assert.equal(oddSquares[1], 25);
   });
 });
