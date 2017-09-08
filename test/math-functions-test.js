@@ -15,7 +15,11 @@ describe('isOdd', function() {
 });
 
 describe('isPerfectSquare', function() {
-  it('should return true when input is a perfect square', function() {
+  it('should return true when input +1 is a perfect square', function() {
+    assert.equal(isPerfectSquare(24), true);
+  });
 
+  it('should return false when input +1 is not a perfect square', function() {
+    assert.equal(isPerfectSquare(6), false);
   });
 });
