@@ -26,7 +26,7 @@ describe('isPerfectSquare', function() {
 });
 
 describe('generateMatrixCenter', function() {
-  it('should generate the index of the center of the matrix given the dimensions', function() {
+  it('should generate the index of the center of the matrix given dimensions', function() {
     assert.equal(generateMatrixCenter([5, 5])[0], 2);
     assert.equal(generateMatrixCenter([5, 5])[1], 2);
   });
