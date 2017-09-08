@@ -32,27 +32,3 @@ describe('SpiralMatrix with even perfect square', function() {
     spiralMatrix.fillMatrix();
   });
 });
-
-describe('SpiralMatrix instructions', function() {
-  var spiralMatrix = new SpiralMatrix(24);
-  
-  it('should create coordinate instruction to move right', function() {
-    assert.equal(spiralMatrix.instructions.right[0], 0);
-    assert.equal(spiralMatrix.instructions.right[1], 1);
-  });
-
-  it('should create coordinate instruction to move left', function() {
-    assert.equal(spiralMatrix.instructions.left[0], 0);
-    assert.equal(spiralMatrix.instructions.left[1], -1);
-  });
-
-  it('should create coordinate instruction to move up', function() {
-    assert.equal(spiralMatrix.instructions.up[0], -1);
-    assert.equal(spiralMatrix.instructions.up[1], 0);
-  });
-
-  it('should create coordinate instruction to move down', function() {
-    assert.equal(spiralMatrix.instructions.down[0], 1);
-    assert.equal(spiralMatrix.instructions.down[1], 0);
-  });
-});
