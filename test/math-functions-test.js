@@ -3,7 +3,7 @@ const chai = require('chai');
 const assert = chai.assert;
 const math = require('mathjs');
 const { isOdd, isPerfectSquare,
-        generateMatrixCenter, generateOddSquaresArray,
+        calculateMatrixCenter, generateOddSquaresArray,
         generateMatrix } = require('../lib/math-functions.js');
 
 describe('isOdd', function() {
