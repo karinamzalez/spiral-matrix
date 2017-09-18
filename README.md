@@ -2,6 +2,7 @@
 
 The SpiralMatrix class is written in JavaScript. It takes in a perfect square integer and returns the integers from 0 to that input integer in spiral format starting from the center and going counterclockwise. 
 
+```
 /* Input */
 
   var spiralMatrix = new SpiralMatrix(24);
