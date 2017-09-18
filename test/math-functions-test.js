@@ -3,7 +3,7 @@ const chai = require('chai');
 const assert = chai.assert;
 const math = require('mathjs');
 const { isOdd, isPerfectSquare,
-        generateMatrixCenter, generateOddSquaresArray,
+        calculateMatrixCenter, generateOddSquaresArray,
         generateMatrix } = require('../lib/math-functions.js');
 
 describe('isOdd', function() {
@@ -26,10 +26,10 @@ describe('isPerfectSquare', function() {
   });
 });
 
-describe('generateMatrixCenter', function() {
-  it('should generate the index of the center of the matrix given dimensions', function() {
-    assert.equal(generateMatrixCenter([5, 5])[0], 2);
-    assert.equal(generateMatrixCenter([5, 5])[1], 2);
+describe('calculateMatrixCenter', function() {
+  it('should calculate the index of the center of the matrix given dimensions', function() {
+    assert.equal(calculateMatrixCenter([5, 5])[0], 2);
+    assert.equal(calculateMatrixCenter([5, 5])[1], 2);
   });
 });
 
