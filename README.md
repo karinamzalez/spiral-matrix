@@ -12,7 +12,7 @@ The SpiralMatrix class is written in JavaScript. It takes in a perfect square in
 
 sample output: 
 
-
+https://user-images.githubusercontent.com/14364118/30558873-0a2e8128-9c70-11e7-815e-9a6ab040fe6a.jpg
 
 Testing is done with Chai and Mocha. There are 8 passing tests which can be run in the terminal:
 
