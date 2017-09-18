@@ -2,7 +2,6 @@
 
 const chai = require('chai');
 const assert = chai.assert;
-const math = require('mathjs');
 const SpiralMatrix = require('../lib/spiral-matrix.js');
 
 describe('SpiralMatrix with even perfect square', function() {
